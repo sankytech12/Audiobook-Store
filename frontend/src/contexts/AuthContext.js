@@ -31,7 +31,8 @@ const AuthProvider = ({ children }) => {
     };
 
     const logout = async () => {
-        await axios.post('http://localhost:5050/api/users/logout');
+        // await axios.post('http://localhost:5050/api/users/logout');
+        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
         setUser(null);
     };
 

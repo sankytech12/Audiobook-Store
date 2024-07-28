@@ -22,7 +22,7 @@ const AudiobookPage = () => {
 
     const submitReview = async () => {
         let token=document.cookie;
-        token=token.split('=')[2];
+        token=token.split('=')[1];
         const url=`http://localhost:5050/api/audiobooks/${id}/reviews?token=${token}`;
         await axios.post(url, { rating, comment });
         setReview('');

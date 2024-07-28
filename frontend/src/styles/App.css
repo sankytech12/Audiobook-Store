@@ -141,7 +141,7 @@ input {
 }
 
 button {
-  background-color: #007bff;
+  background-color: rgb(245, 119, 107);
   border: none;
   border-radius: 5px;
   color: white;
@@ -149,6 +149,9 @@ button {
   font-size: 1rem;
   padding: 10px;
   transition: background-color 0.3s;
+}
+button:hover {
+  background-color: rgb(239, 65, 48);
 }
 
 .register_btn:hover {

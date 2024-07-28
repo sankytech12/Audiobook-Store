@@ -13,11 +13,8 @@ const LoginPage = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            // await axios.post('http://localhost:5050/api/users/login', { email, password });
             const data=await login(email, password);
             document.cookie = `token=${data.token}`;
-            console.log("cookie from login",document.cookie);
-            console.log("data",data);
             navigate('/');
         } catch (error) {
           setErrorMessage('Error registering. Please try again.');
