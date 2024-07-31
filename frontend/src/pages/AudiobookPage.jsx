@@ -14,7 +14,7 @@ const AudiobookPage = () => {
 
     useEffect(() => {
         const fetchAudiobook = async () => {
-            const { data } = await axios.get(`http://localhost:5050/api/audiobooks/${id}`);
+            const { data } = await axios.get(`https://audiobook-store-backend.onrender.com/api/audiobooks/${id}`);
             setAudiobook(data);
         };
         fetchAudiobook();
@@ -23,7 +23,7 @@ const AudiobookPage = () => {
     const submitReview = async () => {
         let token=document.cookie;
         token=token.split('=')[1];
-        const url=`http://localhost:5050/api/audiobooks/${id}/reviews?token=${token}`;
+        const url=`https://audiobook-store-backend.onrender.com/api/audiobooks/${id}/reviews?token=${token}`;
         await axios.post(url, { rating, comment });
         setReview('');
         setRating(0);
