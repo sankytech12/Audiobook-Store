@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
@@ -15,7 +14,6 @@ const RegisterPage = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
         try {
-            // const user=await axios.post('http://localhost:5050/api/users/register', { name, email, password });
             const user=await register(name, email, password);
             console.log("user",user.data);
             await login(email, password);
