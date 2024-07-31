@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const { data } = await axios.get('http://localhost:5050/api/users/check');
+                const { data } = await axios.get('https://audiobook-store-backend.onrender.com/api/users/check');
                 setUser(data.user);
             } catch (error) {
                 setUser(null);
@@ -19,13 +19,13 @@ const AuthProvider = ({ children }) => {
     },[]);
 
     const login = async (email, password) => {
-        const { data } = await axios.post('http://localhost:5050/api/users/login', { email, password });
+        const { data } = await axios.post('https://audiobook-store-backend.onrender.com/api/users/login', { email, password });
         setUser(data.user);
         return data;
     };
 
     const register = async (name, email, password) => {
-        const { data } = await axios.post('http://localhost:5050/api/users/register', { name, email, password });
+        const { data } = await axios.post('https://audiobook-store-backend.onrender.com/api/users/register', { name, email, password });
         setUser(data.user);
         return data;
     };
