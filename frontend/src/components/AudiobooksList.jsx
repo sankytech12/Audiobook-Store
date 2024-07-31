@@ -13,14 +13,14 @@ const AudiobookList = () => {
         const fetchAudiobooks = async () => {
             if(filters.genre){
                 const { data } = await axios.get(
-                    `http://localhost:5050/api/audiobooks/genre/${filters.genre}`
+                    `https://audiobook-store-backend.onrender.com/api/audiobooks/genre/${filters.genre}`
                   );
                   setAudiobooks(data.audiobooks);
                   setTotalPages(data.totalPages);
                   return;
             }
             const  {data}  = await axios.get(
-                `http://localhost:5050/api/audiobooks?page=${page}`
+                `https://audiobook-store-backend.onrender.com/api/audiobooks?page=${page}`
               );
               setAudiobooks(data.audiobooks);
               setTotalPages(data.totalPages);
